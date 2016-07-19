@@ -1,0 +1,24 @@
+//MODERATOR
+apply plugin: 'java'
+apply plugin: 'eclipse'
+repositories {
+    jcenter()
+    
+    flatDir{
+        dirs "$rootProject.projectDir/jarRepo"
+    }
+    maven {url = 'http://conjars.org/repo/'}
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    compile name: 'DeveloperProject'
+    testCompile 'junit:junit:4.12'
+    //DEPENDENCIES FOR CASCADING
+    compile group: 'cascading', name: 'cascading-local', version: '3.0.3'
+    compile group: 'cascading', name: 'cascading-hadoop', version: '3.0.3'
+    compile group: 'com.hotels', name: 'plunger', version: '3.0.2'
+    compile group: 'cascading', name: 'cascading-hadoop2-mr1', version: '3.0.3'
+    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+}
+
