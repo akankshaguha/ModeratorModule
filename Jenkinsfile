@@ -6,8 +6,8 @@ node {
 }
 stage 'copy_artifact'
 node{
-step([$class: 'CopyArtifact', filter: '**/DeveloperProject.jar', fingerprintArtifacts: true, projectName: '/DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false]])
-
+step([$class: 'CopyArtifact', filter: '**/DeveloperProject.jar', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false]])
+ 
 }
 stage 'CLEAN_MODERATOR_MODULE'
 node {
