@@ -6,7 +6,7 @@ repositories {
     jcenter()
     
     flatDir{
-        dirs "\\C\\JENKINS_HOME\\jenkins_home\\jobs\\DeveloperModule\\workspace"
+        dirs "C\\JENKINS_HOME\\jenkins_home\\jobs\\DeveloperModule\\workspace"
     }
     maven {url = 'http://conjars.org/repo/'}
 }
