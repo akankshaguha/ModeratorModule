@@ -6,8 +6,8 @@ node {
 }
 stage 'copy_artifact'
 node{
-
-step([$class: 'CopyArtifact', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: '../ModeratorModule/repo'])
+//step([$class: 'CopyArtifact', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: '../ModeratorModule/repo'])
+step([$class: 'CopyArtifact', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'SpecificBuildSelector', buildNumber: '1'], target: 'ModeratorModule/repo/'])
 
  
 }
