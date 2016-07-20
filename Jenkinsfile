@@ -1,14 +1,7 @@
 #!groovy
 node {
  git 'https://github.com/exorcist007/ModeratorModule.git'
-step([$class: 'CopyArtifact', flatten: true, projectName: 'DeveloperModule/', selector: [$class: 'TriggeredBuildSelector', allowUpstreamDependencies: true, fallbackToLastSuccessful: false, upstreamFilterStrategy: 'UseNewest'], target: '../ModeratorModule/repo/'])
-
-
-
-
-
-
-
+step([$class: 'CopyArtifact', flatten: true, projectName: 'ModeratorModule/', selector: [$class: 'TriggeredBuildSelector', allowUpstreamDependencies: true, fallbackToLastSuccessful: false, upstreamFilterStrategy: 'UseNewest'], target: '../ModeratorModule/repo/'])
 }
 
 stage 'CLEAN_MODERATOR_MODULE'
