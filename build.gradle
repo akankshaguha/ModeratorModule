@@ -6,7 +6,7 @@ repositories {
     jcenter()
     
     flatDir{
-      //  dirs "../ModeratorModule/workspace/repo"
+        dirs "../ModeratorModule/repo"
     }
     maven {url = 'http://conjars.org/repo/'}
 }
