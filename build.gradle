@@ -6,7 +6,7 @@ repositories {
     jcenter()
     
     flatDir{
-        dirs "$rootProject.projectDir/jarRepo"
+        dirs "${JENKINS_HOME}/jobs/ModeratorModule/jarRepo"
     }
     maven {url = 'http://conjars.org/repo/'}
 }
