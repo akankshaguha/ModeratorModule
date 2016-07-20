@@ -1,7 +1,8 @@
 #!groovy
 node {
  git 'https://github.com/exorcist007/ModeratorModule.git'
- step([$class: 'CopyArtifact', excludes: 'builds/', filter: 'repo/*.jar', fingerprintArtifacts: true, flatten: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: 'ModeratorModule/repo/'])
+ step([$class: 'CopyArtifact', filter: 'build/libs/*.jar', fingerprintArtifacts: true, flatten: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: '$JENKINS_HOME/jobs/ModeratorModule/repo'])
+
 }
 
 stage 'CLEAN_MODERATOR_MODULE'
