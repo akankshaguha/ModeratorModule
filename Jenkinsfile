@@ -1,11 +1,14 @@
 #!groovy
+
+stage 'CLONE_MODERATOR_MODULE'
 node {
  git 'https://github.com/exorcist007/ModeratorModule.git'
-step([$class: 'CopyArtifact', fingerprintArtifacts: true, flatten: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: '../ModeratorModule/repo'])
-
+}
+stage 'copy_artifact'
+node{
+ step([$class: 'CopyArtifact', filter: 'builds/**/archive/**/**/*.jar', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'TriggeredBuildSelector', allowUpstreamDependencies: true, fallbackToLastSuccessful: false, upstreamFilterStrategy: 'UseNewest'], target: 'ModeratorModule/repo'])
 
 }
-
 stage 'CLEAN_MODERATOR_MODULE'
 node {
    
