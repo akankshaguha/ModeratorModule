@@ -1,5 +1,8 @@
 #!groovy
 
+node('CLONE_MODERATOR_PROJECT') {
+ git 'https://github.com/exorcist007/DeveloperModule.git'
+}
 stage 'CLONE_CLEAN_DEVELOPER_MODULE'
 node('CLEAN_DEVELOPER_PROJECT') {
    	bat 'gradle clean --info'
