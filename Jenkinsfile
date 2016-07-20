@@ -1,8 +1,7 @@
 #!groovy
 node {
  git 'https://github.com/exorcist007/ModeratorModule.git'
- step([$class: 'CopyArtifact', filter: '*.jar', fingerprintArtifacts: true, flatten: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: 'ModeratorModule/'])
-
+ step([$class: 'CopyArtifact', filter: '*.jar', optional: true, projectName: 'DeveloperModule/', selector: [$class: 'TriggeredBuildSelector', allowUpstreamDependencies: true, fallbackToLastSuccessful: false, upstreamFilterStrategy: 'UseNewest'], target: '/repo'])
 
 }
 
