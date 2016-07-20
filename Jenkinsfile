@@ -6,7 +6,10 @@ node {
 }
 stage 'copy_artifact'
 node{
-step([$class: 'CopyArtifact', filter: '**/DeveloperProject.jar', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false]])
+ if(fileExists '**/DeveloperProject.jar'){
+  echo 'good'
+ }else echo 'bad'
+//step([$class: 'CopyArtifact', filter: '**/DeveloperProject.jar', fingerprintArtifacts: true, projectName: 'DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false]])
  
 }
 stage 'CLEAN_MODERATOR_MODULE'
