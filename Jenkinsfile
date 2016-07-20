@@ -6,17 +6,9 @@ node {
 }
 stage 'copy_artifact'
 node{
- step(
-  [$class: 'CopyArtifact', 
-  filter: 'C:\\JENKINS_HOME\\jenkins_home\\jobs\\DeveloperModule\\builds\\14\\archive\\build\\libs\\*.jar', 
-  fingerprintArtifacts: true, 
-  projectName: '/DeveloperModule/', 
-           selector: [$class: 'TriggeredBuildSelector', 
-           allowUpstreamDependencies: true, 
-           fallbackToLastSuccessful: false, 
-           upstreamFilterStrategy: 'UseNewest'], 
- target: 'ModeratorModule/repo']
- )
+ step([$class: 'CopyArtifact', filter: 'C:\\JENKINS_HOME\\jenkins_home\\jobs\\DeveloperModule\\builds\\14\\archive\\build\\libs', fingerprintArtifacts: true, projectName: '/DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: 'ModeratorModule/repo'])
+
+
 }
 stage 'CLEAN_MODERATOR_MODULE'
 node {
