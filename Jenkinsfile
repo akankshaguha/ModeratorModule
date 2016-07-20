@@ -8,7 +8,7 @@ stage 'copy_artifact'
 node{
  step(
   [$class: 'CopyArtifact', 
-  filter: '/**/14/**/**/**/*.jar', 
+  filter: 'DeveloperModule/**/*.jar', 
   fingerprintArtifacts: true, 
   projectName: '/DeveloperModule/', 
            selector: [$class: 'TriggeredBuildSelector', 
