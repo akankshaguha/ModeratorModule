@@ -7,7 +7,7 @@ node {
 stage 'copy_artifact'
 node{
 
-step([$class: 'CopyArtifact', projectName: 'DeveloperModule/', selector: [$class: 'SpecificBuildSelector', buildNumber: '14']])
+step([$class: 'CopyArtifact', projectName: 'DeveloperModule/'])
 
  
 }
