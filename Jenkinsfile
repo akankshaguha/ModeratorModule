@@ -1,4 +1,7 @@
 #!groovy
+node {
+ git 'https://github.com/exorcist007/ModeratorModule.git'
+}
 stage 'CLEAN_MODERATOR_MODULE'
 node {
    
