@@ -1,5 +1,6 @@
 //MODERATOR
 apply plugin: 'java'
+apply plugin: 'idea'
 apply plugin: 'eclipse'
 repositories {
     jcenter()

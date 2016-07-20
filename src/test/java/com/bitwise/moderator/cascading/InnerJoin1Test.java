@@ -2,11 +2,12 @@ package com.bitwise.moderator.cascading;
 
 import java.util.List;
 
+import com.bitwise.assignment.cascading.InnerJoin1;
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.bitwise.assignment.cascading.InnerJoin1;
+
 import com.hotels.plunger.Bucket;
 import com.hotels.plunger.Data;
 import com.hotels.plunger.DataBuilder;
