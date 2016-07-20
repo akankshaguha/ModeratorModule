@@ -6,8 +6,7 @@ node {
 }
 stage 'copy_artifact'
 node{
- step([$class: 'CopyArtifact', filter: 'C:\\JENKINS_HOME\\jenkins_home\\jobs\\DeveloperModule\\builds\\14\\archive\\build\\libs', fingerprintArtifacts: true, projectName: '/DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false], target: 'ModeratorModule/repo'])
-
+step([$class: 'CopyArtifact', filter: '**/DeveloperProject.jar', fingerprintArtifacts: true, projectName: '/DeveloperModule/', selector: [$class: 'StatusBuildSelector', stable: false]])
 
 }
 stage 'CLEAN_MODERATOR_MODULE'
