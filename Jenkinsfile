@@ -8,7 +8,7 @@ stage 'copy_artifact'
 node{
  step(
   [$class: 'CopyArtifact', 
-  filter: 'DeveloperModule/**/*.jar', 
+  filter: 'C:\\JENKINS_HOME\\jenkins_home\\jobs\\DeveloperModule\\builds\\14\\archive\\build\\libs\\*.jar', 
   fingerprintArtifacts: true, 
   projectName: '/DeveloperModule/', 
            selector: [$class: 'TriggeredBuildSelector', 
