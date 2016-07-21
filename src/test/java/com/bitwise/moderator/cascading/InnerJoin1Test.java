@@ -57,7 +57,7 @@ public class InnerJoin1Test {
                 1002002051,"debit",500,"5/1/2014"
 
         ), CoreMatchers.is(
-                new Tuple(1002002051,"abc1","10/1/1991",888501,
+                new Tuple(1002002051,"ab/*c1*/","10/1/1991",888501,
                         1002002051,"debit",500,"5/1/2014"
 
                 )));
